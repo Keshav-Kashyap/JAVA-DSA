@@ -1,26 +1,30 @@
 import java.util.Scanner;
 
 public class ArmStrong {
-    public static int cheakArmStrong(int num) {
+    public static boolean cheakArmStrong(int num) {
 
-        int lastDigit = 0, rev = 0;
+        int lastDigit = 0, sum = 0, orignal = num;
         while (num != 0) {
 
             lastDigit = num % 10;
-
+            sum += (lastDigit * lastDigit * lastDigit);
             num /= 10;
 
         }
 
-        return rev;
+        if (sum == orignal) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
         System.out.println("Enter Your Number");
-        System.out.println(cheakPlandirome(num));
+        int num = sc.nextInt();
+        System.out.println(cheakArmStrong(num));
 
     }
 }
