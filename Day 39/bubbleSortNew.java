@@ -1,4 +1,4 @@
-public class bubbleSort {
+public class bubbleSortNew {
 
     public static void main(String[] args) {
 
