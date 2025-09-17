@@ -2,40 +2,35 @@ import java.util.*;
 
 public class StringCompression {
 
-    // public static void stringComp(StringBuilder str) {
-    // StringBuilder newStr = new StringBuilder("");
+    public static void stringComp(StringBuilder str) {
+        StringBuilder newStr = new StringBuilder("");
 
-    // for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
 
-    // char ch = str.charAt(i);
-    // int count = 0;
-    // while (str.charAt(i) == ch) {
-    // count++;
-    // i++;
-    // }
-    // if (count > 1) {
-    // newStr.append(ch + count);
+            Integer count = 1;
+            while (i < str.length() - 1 && str.charAt(i + 1) == str.charAt(i)) {
+                count++;
+                i++;
+            }
+            if (count > 1 && i < str.length()) {
 
-    // }
+                newStr.append(str.charAt(i) + count.toString());
 
-    // }
+            }
 
-    // System.out.println(newStr);
+        }
 
-    // }
+        System.out.println(newStr);
+
+    }
 
     public static void main(String[] args) {
 
         String inp = "aaabbcccdd";
         StringBuilder str = new StringBuilder(inp);
 
-        // stringComp(str);
+        stringComp(str);
 
-        int count = 2;
-        char ch = 'a';
-        StringBuilder strNew = new StringBuilder("");
-        strNew.append(ch + count);
-        System.out.println(strNew);
     }
 
 }
