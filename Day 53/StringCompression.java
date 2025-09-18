@@ -12,9 +12,10 @@ public class StringCompression {
                 count++;
                 i++;
             }
+            newStr.append(str.charAt(i));
             if (count > 1 && i < str.length()) {
 
-                newStr.append(str.charAt(i) + count.toString());
+                newStr.append(count.toString());
 
             }
 
@@ -26,7 +27,7 @@ public class StringCompression {
 
     public static void main(String[] args) {
 
-        String inp = "aaabbcccdd";
+        String inp = "abcd";
         StringBuilder str = new StringBuilder(inp);
 
         stringComp(str);
