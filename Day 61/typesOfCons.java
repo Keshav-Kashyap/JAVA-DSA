@@ -1,6 +1,12 @@
 public class typesOfCons {
 
     public static void main(String[] args) {
+
+        Student s1 = new Student();
+        Student s2 = new Student(18);
+        Student s3 = new Student("keshav");
+        System.out.println(s2.age);
+        System.out.println(s3.name);
     }
 
 }
