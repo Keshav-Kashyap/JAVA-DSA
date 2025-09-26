@@ -38,13 +38,24 @@ class Student {
     String password;
     int marks[];
 
-    // Copy Constructor
+    // shallow Copy Constructor
+    // Student(Student std) {
+    // marks = new int[3];
+    // this.name = std.name;
+    // this.age = std.age;
+    // this.password = std.password;
+    // this.marks = std.marks;
+    // }
+
+    // deep copy constructor
     Student(Student std) {
         marks = new int[3];
         this.name = std.name;
         this.age = std.age;
         this.password = std.password;
-        this.marks = std.marks;
+        for (int i = 0; i < marks.length; i++) {
+            this.marks[i] = std.marks[i];
+        }
     }
 
     // Parameterized Constructor
