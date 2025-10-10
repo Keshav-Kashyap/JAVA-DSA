@@ -1,11 +1,10 @@
-public class QuickSort {
+public class QuicckSort {
 
-       public static void printArray(int arr[]) {
+    public static void printArray(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
     }
-
 
     public static void quickSort(int arr[], int si, int ei) {
 
@@ -27,9 +26,9 @@ public class QuickSort {
 
         int i = si - 1;
 
-        for (int j = 0; j < ei; j++) {
+        for (int j = si; j < ei; j++) {
 
-            if (arr[j] <=arr[piv] ){
+            if (arr[j] <= piv) {
                 i++;
                 // swaping
                 int temp = arr[j];
@@ -38,17 +37,13 @@ public class QuickSort {
 
             }
 
-
-            
-
-
         }
 
-      i++;
-                
+        i++;
+
         int temp = piv;
         arr[ei] = arr[i];
-         arr[i] = temp;
+        arr[i] = temp;
 
         return i;
 
@@ -56,7 +51,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
         int arr[] = { 6, 3, 9, 8, 2, 5 };
-        quickSort(arr, 0, arr.length);
+        quickSort(arr, 0, arr.length - 1);
         printArray(arr);
 
     }
