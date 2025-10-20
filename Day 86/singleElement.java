@@ -5,7 +5,7 @@ public class singleElement {
         int si = 0;
         int ei = nums.length - 1;
 
-        while (si >= ei) {
+        while (si <= ei) {
 
             int mid = si + (ei - si) / 2;
 
@@ -17,7 +17,7 @@ public class singleElement {
             // handling the last case then , do not check the lastIndex+1 (out of index
             // error ko khatam karegaa)
 
-            if (mid == nums.length && nums[mid - 1] != nums[mid]) {
+            if (mid == nums.length - 1 && nums[mid - 1] != nums[mid]) {
                 return mid;
             }
 
@@ -32,7 +32,7 @@ public class singleElement {
             if (mid % 2 == 0) {
 
                 // jidar match karega udhar odd ban jaayeag
-                if (nums[mid - 1] == mid) {
+                if (nums[mid - 1] == nums[mid]) {
                     ei = mid - 1;
                 } else {
                     si = mid + 1;
@@ -40,7 +40,7 @@ public class singleElement {
 
             } else {
 
-                if (nums[mid - 1] == mid) {
+                if (nums[mid - 1] == nums[mid]) {
                     si = mid + 1;
                 } else {
                     ei = mid - 1;
@@ -54,7 +54,8 @@ public class singleElement {
 
     public static void main(String[] args) {
 
-        int[] arr = { 1, 1, 2, 3, 3, 6, 6, 7, 7 };
+        // int[] arr = { 1, 1, 2, 3, 3, 6, 6, 7, 7 };
+        int[] arr = { 1, 1, 2 };
 
         System.out.println(findIdx(arr));
 
