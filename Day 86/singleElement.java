@@ -5,7 +5,7 @@ public class singleElement {
         int si = 0;
         int ei = nums.length - 1;
 
-        while (si <= ei) {
+        while (si < ei) {
 
             int mid = si + (ei - si) / 2;
 
@@ -49,7 +49,7 @@ public class singleElement {
 
         }
 
-        return -1;
+        return si;
     }
 
     public static void main(String[] args) {
