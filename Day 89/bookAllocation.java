@@ -24,17 +24,20 @@ public class bookAllocation {
 
     public static boolean isVaild(int mid, int arr[], int m) {
 
-        int students[] = new int[m];
-        int st = 0;
+        int st = 1, pages = 0;
         for (int i = 0; i < arr.length; i++) {
 
-            if ((students[st] + arr[i]) <= mid) {
+            if (arr[i] > mid) {
+                return false;
+            }
 
-                students[st] += arr[i];
+            if ((pages + arr[i]) <= mid) {
+
+                pages += arr[i];
             } else {
-                if (st < students.length - 1) {
+                if (st < m) {
                     st++;
-                    i--;
+                    pages = arr[i];
                 } else {
                     return false;
                 }
