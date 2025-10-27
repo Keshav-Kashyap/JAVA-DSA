@@ -3,7 +3,7 @@ public class backTracking {
     public static void MakeArray(int arr[], int i) {
 
         if (i == arr.length) {
-
+            printArr(arr);
             return;
         }
 
