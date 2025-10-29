@@ -1,20 +1,17 @@
 public class Permutations {
 
-    public static void findPer(String str, String ans, int i, int counter) {
+    public static void findPer(String str, String ans) {
 
-        if (i == str.length()) {
-
+        if (str.length() == 0) {
             System.out.println(ans);
             return;
-
         }
 
-        findPer(str, ans + str.charAt(i), i + 1, counter - 1);
+        for (int i = 0; i < str.length(); i++) {
 
-        if (counter > 1) {
-
-            findPer(str, ans, i + 2, counter);
-
+            char curr = str.charAt(i);
+            String NewStr = str.substring(0, i) + str.substring(i + 1);
+            findPer(NewStr, ans + curr);
         }
 
     }
@@ -22,7 +19,7 @@ public class Permutations {
     public static void main(String[] args) {
 
         String str = "abc";
-        findPer(str, "", 0, str.length());
+        findPer(str, "");
 
     }
 }
