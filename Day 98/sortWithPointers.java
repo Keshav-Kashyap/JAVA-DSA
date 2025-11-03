@@ -1,24 +1,22 @@
 public class sortWithPointers {
 
-    public static void sortPointers(int arr[]) {
-        int l = 0, m = 0, h = arr.length - 1;
+    public static void sortPointers(int nums[]) {
+        int l = 0, m = 0, h = nums.length - 1;
 
-        for (int i = 0; i < arr.length; i++) {
+        while (m <= h) {
 
-            if (m > h)
-                break;
-            if (arr[m] == 0) {
-                int temp = arr[m];
-                arr[m] = arr[l];
-                arr[l] = temp;
+            if (nums[m] == 0) {
+                int temp = nums[m];
+                nums[m] = nums[l];
+                nums[l] = temp;
                 m++;
                 l++;
-            } else if (arr[m] == 1) {
+            } else if (nums[m] == 1) {
                 m++;
-            } else if (arr[m] == 2) {
-                int temp = arr[m];
-                arr[m] = arr[h];
-                arr[h] = temp;
+            } else if (nums[m] == 2) {
+                int temp = nums[m];
+                nums[m] = nums[h];
+                nums[h] = temp;
                 m++;
                 h--;
             }
@@ -26,19 +24,19 @@ public class sortWithPointers {
 
     }
 
-    public static void printArr(int arr[]) {
+    public static void printnums(int nums[]) {
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i]);
         }
 
     }
 
     public static void main(String[] args) {
 
-        int arr[] = { 0, 1, 0, 1, 2, 0, 1 };
-        sortPointers(arr);
-        printArr(arr);
+        int nums[] = { 0, 2 };
+        sortPointers(nums);
+        printnums(nums);
 
     }
 
