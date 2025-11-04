@@ -2,12 +2,15 @@ public class nQueens {
 
     public static void nQueen(char board[][], int row, int n) {
         if (row == n) {
+            System.out.println("This is New ChessBoard ");
             printBoard(board);
+            System.out.println();
+            System.out.println();
             return;
         }
 
         for (int j = 0; j < n; j++) {
-            if (isSafe(board[][],row,j,n)) {
+            if (isSafe(board, row, j, n)) {
 
                 board[row][j] = 'Q';
                 nQueen(board, row + 1, n);
@@ -23,9 +26,10 @@ public class nQueens {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
 
-                System.out.println(board[i][j]);
+                System.out.print(board[i][j] + " ");
 
             }
+            System.out.println();
 
         }
     }
