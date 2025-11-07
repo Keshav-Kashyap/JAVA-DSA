@@ -1,5 +1,35 @@
 public class sudoko {
 
+    public static boolean sudokuSolver(int sudoku[][], int row, int col) {
+
+        // base kaam
+
+        // next -> row or column
+        int nextRow = 0, nextCol = col + 1;
+        if (col + 1 == 9) {
+            nextRow = row + 1;
+        }
+
+        // agr 0 nhi hai to
+
+        if (suduko[row][col] != 0) {
+
+        }
+
+        // recursion kaam
+
+        for (int digit = 1; digit <= 9; digit++) {
+            if (isSafe(sudoku, row, col, digit)) {
+                sudoku[row][col] = digit;
+                if (sudokuSolver(sudoku, nextRow, nextCol)) {
+                    return true;
+                }
+                sudoku[row][col] = 0;
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
 
         int[][] sudoku = {
