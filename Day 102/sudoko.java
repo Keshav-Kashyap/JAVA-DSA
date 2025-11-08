@@ -12,7 +12,9 @@ public class sudoko {
 
         // agr 0 nhi hai to
 
-        if (suduko[row][col] != 0) {
+        if (sudoku[row][col] != 0) {
+
+            return sudokuSolver(sudoku, nextRow, nextCol);
 
         }
 
