@@ -63,9 +63,6 @@ public class LinkedList {
         ll.addFirst(3);
         ll.addFirst(4);
 
-        ll.addLast(66);
-        ll.addLast(65);
-        ll.addLast(64);
-        ll.addLast(63);
+       ll.printLL();
     }
 }
