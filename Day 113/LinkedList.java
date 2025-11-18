@@ -54,6 +54,27 @@ public class LinkedList {
         return -1;
     }
 
+    public int helper(Node temp, int key) {
+        if (temp == null) {
+            return -1;
+        }
+
+        // kaam
+        if (temp.data == key) {
+            return 0;
+        }
+        int idx = helper(temp.next, key);
+        if (idx != -1) {
+            idx++;
+        }
+        return idx;
+    }
+
+    public int serachRecursive(int key) {
+
+        return helper(head, key);
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll = new LinkedList();
@@ -63,8 +84,7 @@ public class LinkedList {
         ll.add(4);
         ll.add(5);
         ll.printLL();
-        System.out.println(ll.SearchINLL(1));
-        System.out.println(ll.SearchINLL(10));
+        System.out.println(ll.serachRecursive(1));
 
     }
 }
