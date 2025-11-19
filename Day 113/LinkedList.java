@@ -38,7 +38,7 @@ public class LinkedList {
             System.out.print(temp.data + "->");
             temp = temp.next;
         }
-        System.out.print("null");
+        System.out.println("null");
 
     }
 
@@ -75,6 +75,24 @@ public class LinkedList {
         return helper(head, key);
     }
 
+    // Reverse a LL
+
+    public void Reverse() {
+
+        Node prev = null;
+        Node curr = tail = head;
+        Node Next = null;
+        while (curr != null) {
+            Next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = Next;
+        }
+
+        head = prev;
+
+    }
+
     public static void main(String[] args) {
 
         LinkedList ll = new LinkedList();
@@ -84,7 +102,8 @@ public class LinkedList {
         ll.add(4);
         ll.add(5);
         ll.printLL();
-        System.out.println(ll.serachRecursive(1));
-
+        // System.out.println(ll.serachRecursive(1));
+        ll.Reverse();
+        ll.printLL();
     }
 }
