@@ -37,20 +37,37 @@ public class LinkedList {
 
     }
 
-    public void deleteByIndex(int idx) {
+    public void deleteFromStart(int idx) {
 
-        Node tempPrev = null;
-        Node tempNext = head;
-        for (int i = 0; i < idx; i++) {
-            if (tempPrev == null) {
-                tempPrev = head;
-                tempNext = tempNext.next;
-                break;
-            }
-            tempPrev = tempPrev.next;
-            tempNext = tempNext.next;
+        Node temp = head;
+        System.out.println(head.data);
+        for (int i = 0; i < idx - 1; i++) {
+
+            temp = temp.next;
         }
-        tempPrev.next = tempNext.next;
+        size--;
+        temp.next = temp.next.next;
+
+    }
+
+    public void deleteFromEnd(int n) {
+
+        // delete -> (size-n+1)th node
+
+        int idx = size - n + 1;
+        size--;
+        if (n == size) {
+            head = head.next;
+            return;
+        }
+
+        Node temp = head;
+
+        for (int i = 1; i < idx - 1; i++) {
+            temp = temp.next;
+        }
+
+        temp.next = temp.next.next;
 
     }
 
@@ -64,8 +81,9 @@ public class LinkedList {
         ll.add(4);
         ll.add(5);
         ll.printLL();
-        ll.deleteByIndex(2);
+        ll.deleteFromStart(2);
         ll.printLL();
-
+        ll.deleteFromEnd(1);
+        ll.printLL();
     }
 }
