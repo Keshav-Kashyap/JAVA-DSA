@@ -1,17 +1,16 @@
 public class bubbleSort {
+    public static void bubble(int arr[]) {
 
-    public static void bubblesort(int arr[]) {
+        for (int i = 0; i < arr.length - 1; i++) {
 
-        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
 
-            for (int j = i; j < arr.length; j++) {
-
-                if (arr[i] > arr[j]) {
+                if (arr[j] > arr[j + 1]) {// if this then swap
                     int temp = arr[j];
-                    arr[j] = arr[i];
-                    arr[i] = temp;
-
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
                 }
+
             }
 
         }
@@ -19,17 +18,16 @@ public class bubbleSort {
     }
 
     public static void printArr(int arr[]) {
-
         for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+            System.out.print(arr[i] + ",");
         }
-
     }
 
     public static void main(String[] args) {
 
-        int arr[] = { 3, 2, 4, 5, 1 };
-        bubblesort(arr);
+        int arr[] = { 8, 7, 5, 6, 2 };
+
+        bubble(arr);
         printArr(arr);
 
     }
