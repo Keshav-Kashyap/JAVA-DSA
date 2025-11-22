@@ -58,6 +58,37 @@ public class LinkedList {
 
     }
 
+    public boolean removeCycle() {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                slow = head;
+                break;
+
+            }
+        }
+
+        Node prev = fast;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+
+            if (slow == fast) {
+                prev.next = null;
+            }
+            prev = prev.next;
+        }
+
+        return false;
+
+    }
+
     public void makeCycle() {
 
         Node temp = head;
@@ -92,6 +123,9 @@ public class LinkedList {
         System.out.println();
         System.out.println();
 
-        System.out.println(ll.checkCircle());
+        if (ll.checkCircle()) {
+            ll.removeCycle();
+        }
+        ll.printLL();
     }
 }
