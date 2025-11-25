@@ -29,29 +29,56 @@ public class LinkedList {
 
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp.data);
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
+
+        System.out.println("null");
+    }
+
+    public Node getMid(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+        while (fast != null && fast.next != null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+
+        }
+
+        return slow;
     }
 
     public void zigZag() {
 
-        Node tempLast = head;
-        while (tempLast != null) {
-            tempLast = tempLast.next;
+        Node mid = getMid(head);
+        Node curr = mid.next;
+        mid.next = null;
+        Node next;
+        Node prev = null;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
         }
 
-        Node tempHead = head;
+        Node LH = head;
+        Node RH = prev;
+        Node nextL, nextR;
 
-        Node storeTemp = null;
+        while (LH != null && RH != null) {
 
-        while (tempLast != tempHead) {
+            // Zig Zag Pattern
+            nextL = LH.next;
+            LH.next = RH;
+            nextR = RH.next;
+            RH.next = nextL;
 
-            storeTemp = tempHead;
-            tempHead.next = tempLast;
-            tempLast = storeTemp.next;
-
-            tempHead = storeTemp.next;
+            // updating
+            LH = nextL;
+            RH = nextR;
 
         }
 
