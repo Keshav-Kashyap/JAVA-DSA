@@ -22,7 +22,8 @@ public class StackQ {
         }
 
         public static int pop() {
-
+//nothing tyo cmmadsfjasdklfsadf
+dafsdfsdfsdf
             if (isEmpty()) {
                 System.out.println("Stack is Empty");
                 return -1;
