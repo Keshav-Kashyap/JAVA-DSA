@@ -31,7 +31,7 @@ public class QueueDQ {
 
         q.add(1);
         q.add(2);
-        q.add(3);
+        q.add(3);dafdsfds
         q.add(4);
         q.add(5);
 
